@@ -11,7 +11,7 @@
     <path id="ics-netsim.classpath">
         <pathelement location="bin"/>
     </path>
-    <path id="run.Splasher (1).classpath">
+    <path id="run.MainApp.classpath">
         <path refid="ics-netsim.classpath"/>
     </path>
     <target name="init">
@@ -49,9 +49,9 @@
         <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
         <antcall target="build"/>
     </target>
-    <target name="Splasher (1)">
+    <target name="MainApp">
         <java classname="platform.Splasher" failonerror="true" fork="yes">
-            <classpath refid="run.Splasher (1).classpath"/>
+            <classpath refid="run.MainApp.classpath"/>
         </java>
     </target>
 </project>
