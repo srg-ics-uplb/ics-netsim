@@ -53,6 +53,7 @@ public class TutorialFrame extends JFrame implements ActionListener{
         Container container = getContentPane();
         mainWindow = mainFrame;
 
+/*        
         try{
            f = new File("tutorials/list.txt");
            Scanner fileScanner = new Scanner(f);            
@@ -100,7 +101,7 @@ public class TutorialFrame extends JFrame implements ActionListener{
         } catch (IOException ie) {
             ie.printStackTrace();
         }
-
+*/
 
         listPane.setLayout(new GridLayout(50,1));
 

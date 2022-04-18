@@ -67,7 +67,7 @@ public class MainFrame extends JFrame implements ActionListener {
 	 */
 	private static final long serialVersionUID = 8550292220084056830L;
 
-	TutorialFrame tutorialFrame;
+	//TutorialFrame tutorialFrame;
 	PacketListFrame packetListFrame;
 	
     public final static String ACCEPTED_FILENAME_EXTENSION = "vnt";
@@ -145,7 +145,7 @@ public class MainFrame extends JFrame implements ActionListener {
         super();
         frameInit();
         setLayout(new BorderLayout());
-        tutorialFrame = new TutorialFrame(this);
+        //tutorialFrame = new TutorialFrame(this);
         packetListFrame = new PacketListFrame(this);
         Container container = getContentPane();
 
@@ -307,8 +307,9 @@ public class MainFrame extends JFrame implements ActionListener {
         setTitle("ICS-NetSim: Scalable Cisco IOS Simulator for Virtual Networks");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
-        setVisible(true);
         pack();
+        setVisible(true);
+        
 
         /***********************************************************************
          * SET THE LOCATION OF THE FRAME ON THE SCREEN
@@ -435,7 +436,7 @@ public class MainFrame extends JFrame implements ActionListener {
                 }
             }
         }else if (source == tutorialButton) {
-        	tutorialFrame.setVisible(true);
+        	//tutorialFrame.setVisible(true);
         	
         }else if (source == tracerButton) {
         	if (packetListFrame.isVisible() == false) packetListFrame.setVisible(true);
