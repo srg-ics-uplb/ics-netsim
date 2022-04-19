@@ -9,28 +9,29 @@
     <property name="target" value="11"/>
     <property name="source" value="11"/>
     <path id="ics-netsim.classpath">
-        <pathelement location="bin"/>
+        <pathelement location="build"/>
     </path>
     <path id="run.MainApp.classpath">
         <path refid="ics-netsim.classpath"/>
     </path>
     <target name="init">
-        <mkdir dir="bin"/>
-        <copy includeemptydirs="false" todir="bin">
+        <mkdir dir="build"/>
+        <copy includeemptydirs="false" todir="build">
             <fileset dir="src">
                 <exclude name="**/*.java"/>
             </fileset>
         </copy>
     </target>
     <target name="clean">
-        <delete dir="bin"/>
+        <delete dir="build"/>
+        <delete dir="dist"/>
     </target>
     <target depends="clean" name="cleanall"/>
     <target depends="build-subprojects,build-project" name="build"/>
     <target name="build-subprojects"/>
     <target depends="init" name="build-project">
         <echo message="${ant.project.name}: ${ant.file}"/>
-        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+        <javac debug="true" debuglevel="${debuglevel}" destdir="build" includeantruntime="false" source="${source}" target="${target}">
             <src path="src"/>
             <classpath refid="ics-netsim.classpath"/>
         </javac>
@@ -53,5 +54,12 @@
         <java classname="platform.Splasher" failonerror="true" fork="yes">
             <classpath refid="run.MainApp.classpath"/>
         </java>
+    </target>
+    <target name="jar" depends="build">
+        <jar destfile="dist/ics-netsim.jar" basedir="build">
+            <manifest>
+               <attribute name="Main-Class" value="platform.Splasher"/>
+            </manifest>
+        </jar>
     </target>
 </project>

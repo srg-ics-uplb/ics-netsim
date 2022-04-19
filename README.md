@@ -11,3 +11,12 @@ Download the latest jar file from the Releases section. Make sure that you have 
 installed the correct JDK version.
 
 `java -jar <jarfile>`
+
+
+## Build from Source
+
+Install Apache Ant
+
+`ant jar`
+
+The runnable jar file is in `dist/`
